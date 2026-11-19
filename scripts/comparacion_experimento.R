@@ -10,18 +10,18 @@ df <- read.csv("plantillas/registro_experimento.csv")
 #         (aggregate)
 
 promedios <- aggregate(ventas_producto ~ ubicacion,
-                      data = datos, FUN = mean)
+                      data = df, FUN = mean)
 
 cat("Promedio de ventas por ubicacion:\n")
 print(promedios)
 
 # TODO 3: contar registros
 cat("\nNumero de registros por grupo:\n")
-print(table(datos$ubicacion))
+print(table(df$ubicacion))
 
 # TODO 3: imprime el número de registros por grupo (table)
 cat("\nNumero de registros por grupo:\n")
-print(table(datos$ubicacion))
+print(table(df$ubicacion))
 
 # TODO 4: escribe 2–3 líneas de interpretación (sección 9 de la plantilla):
 #         por qué con 4 filas no se puede concluir y qué le faltaría al análisis
