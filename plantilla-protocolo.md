@@ -92,28 +92,40 @@ Se muestra el resultado del sorteo realizado con la semilla 1234597, donde se as
 
 ## 8. Limitaciones del diseño
 
-- Promociones de productos competidores: Si otro producto similar tiene descuentos o promociones, puede disminuir las ventas del producto estrella y alterar los resultados.
+- **Promociones de productos competidores:** Si otro producto similar tiene descuentos o promociones, puede disminuir las ventas del producto estrella y alterar los resultados.
 
-- Canibalización entre tiendas: Dos establecimientos cercanos de RetailAndina pueden competir por los mismos clientes. Esto podría provocar que una tienda venda más mientras otra disminuye sus ventas.
+- **Canibalización entre tiendas:** Dos establecimientos cercanos de RetailAndina pueden competir por los mismos clientes. Esto podría provocar que una tienda venda más mientras otra disminuye sus ventas.
 
-- Factores externos: El clima, los eventos locales o los cambios en el personal pueden influir en las ventas, aunque se registren durante el experimento.
+- **Factores externos:** El clima, los eventos locales o los cambios en el personal pueden influir en las ventas, aunque se registren durante el experimento.
 
-- Cambios semanales de ubicación: Mover el producto entre ubicaciones puede generar efectos que permanezcan de una semana a otra, como clientes que continúen buscándolo en su ubicación anterior.
+- **Cambios semanales de ubicación:** Mover el producto entre ubicaciones puede generar efectos que permanezcan de una semana a otra, como clientes que continúen buscándolo en su ubicación anterior.
 
-- Tiempo limitado: Cuatro semanas pueden ser insuficientes para identificar efectos que se mantengan a largo plazo.
+- **Tiempo limitado:** Cuatro semanas pueden ser insuficientes para identificar efectos que se mantengan a largo plazo.
 
 
 ## 9. Comparación en código (Python/R)
 
 Se utilizará el archivo plantillas/registro_experimento.csv para comparar el promedio de ventas_producto por ubicacion mediante los scripts de Python.
 
-*Escribe `scripts/comparacion_experimento.py` (o `.R`): debe cargar `plantillas/registro_experimento.csv` y calcular el promedio de `ventas_producto` por `ubicacion`. Incluye la salida y responde:*
+### Python
+
+![](./images/comparacion_experimento.png "Figura 2. Resultados de la comparación del promedio de ventas por ubicación del producto en Python")
+
+### R
+
+![](./images/comparacionR.png "Figura 2. Resultados de la comparación del promedio de ventas por ubicación del producto en R")
+
+
 
 - ¿Qué grupo muestra mayor venta promedio en la plantilla?
-El pasillo muestra 1335 USD en venta frente a 1040 USD en habitual.
+
+El pasillo principal muestra un promedio de 1335 USD frente a 1040 USD en la ubicación habitual. Existe una diferencia de 295 USD a favor del pasillo principal.
 
 - ¿Por qué con 4 filas no se puede concluir nada sobre el efecto de la ubicación?
-No se puede concluir porque no hay ninguna asignacion real aleatoria, los datos son muy pocos (4) no tenemos control de temporada, ni promociones en el grupo pasillo y no hay media de variabilidad. 
+
+No se puede concluir que la ubicación sea la causa de la diferencia porque solamente existen cuatro registros, dos por grupo. Además, no existe una asignación aleatoria real documentada y uno de los registros del pasillo principal presenta una promoción simultánea. Tampoco se cuenta con información suficiente sobre la variabilidad de las ventas, la temporada y otros factores que podrían influir en los resultados.
 
 
 - Si el experimento se ejecutara con tu protocolo, ¿qué le faltaría a este análisis para ser justo?
+
+Sería necesario recopilar los 40 registros correspondientes a las 10 tiendas durante cuatro semanas, respetando la asignación aleatoria y controlando factores como las promociones, el clima, el stock y los cambios en el personal. También sería necesario comparar las ventas de cada tienda bajo ambas condiciones, considerando las diferencias semanales, la variabilidad y los posibles efectos de cambiar el producto de ubicación.
